@@ -7,6 +7,8 @@ const Login = lazy(() => import('../components/Pages/Login'))
 const Home = lazy(() => import('../components/Pages/Home'))
 const Dashboard = lazy(() => import('../components/Pages/Dashboard'))
 const Usuarios = lazy(() => import('../components/Pages/Usuarios'))
+const Productos = lazy(() => import('../components/Pages/Productos'))
+const Inventario = lazy(() => import('../components/Pages/Inventario'))
 
 const routes = [
 	{
@@ -33,6 +35,24 @@ const routes = [
 				exact: true,
 				render: props => <RouteController component={Usuarios} {...props} />
 			},
+
+
+			{
+				path: `/${APP_VALUES.ROOT_ROUTE}/productos`,
+				exact: true,
+				render: props => <RouteController component={Productos} {...props} />
+			},
+
+			{
+				path: `/${APP_VALUES.ROOT_ROUTE}/inventario`,
+				exact: true,
+				render: props => <RouteController component={Inventario} {...props} />
+			},
+			
+
+
+
+
 			{
 				path: `/${APP_VALUES.ROOT_ROUTE}/*`,
 				exact: true,
@@ -44,6 +64,13 @@ const routes = [
 		path: '*',
 		render: props => <NotFound {...props} />
 	}
+
+
+
+
+
+
+
 ]
 
 export default routes
